@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lightBlub</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+        }
+
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.664);
+        }
+
+        .blub {
+            height: 150px;
+            width: 150px;
+            /* background-color: rgb(239, 220, 4); */
+            border: 2px solid black;
+            border-radius: 48%;
+            /* 
+            box-shadow: 0px 0px 50px 50px rgb(); */
+        }
+
+        .part {
+            height: 30px;
+            width: 80px;
+            border-radius: 5px;
+            background-color: aliceblue;
+            margin-top: 1px;
+        }
+
+        .part2 {
+            margin-top: 1px;
+            height: 30px;
+            width: 70px;
+            border-radius: 5px;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="blub" id="blub"></div>
+        <div class="part2"></div>
+
+        <div class="part"></div>
+        <button id="BTN"> ON </button>
+    </div>
+    <script>
+        const blub = document.getElementById('blub');
+        const button = document.getElementById('BTN');
+        let isON = false;
+
+        button.addEventListener('click', () => {
+            if (isON === false) {
+                blub.style.backgroundColor = 'yellow';
+                blub.style.boxShadow = ' 0px 0px 30px 30px rgb(239, 220, 4)'
+                button.textContent = 'OFF'
+                isON = true
+            }
+            else {
+                blub.style.backgroundColor = '#555';
+                blub.style.boxShadow = 'none';
+                button.textContent = 'ON'
+                isON = false
+
+            }
+        })
+    </script>
+
+</body>
+
+</html>
